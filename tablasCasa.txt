@@ -1,0 +1,164 @@
+Se crean las tablas
+DROP DATABASE IF EXISTS casa_buap; 
+CREATE DATABASE casa_buap;
+USE casa_buap;
+
+DROP TABLE IF EXISTS Usuario;
+CREATE TABLE Usuario( 
+	id_usuario varchar(64), 
+	tipo_u varchar(12), 
+	Nombre_u varchar(20), 
+	Apellidop_u varchar(20),
+	Apellidom_u varchar(20), 
+	Edad_u INT(3), 
+	Contrasena_u varchar(64), 
+	Foto_u varchar(64), 
+	Direccion_u varchar(64), 
+	Celular_ INT(12), 
+	Telefono_ INT(12), 
+	Correo_u varchar(64),
+	IFE_u varchar(64),
+	PRIMARY KEY (id_usuario) 
+);
+
+
+DROP TABLE IF EXISTS Casa;
+CREATE TABLE Casa( 
+Id_casa INT(50) NOT NULL AUTO_INCREMENT,
+Nombre_c varchar(64), 
+Descripcion_c varchar(500),
+Ubicacion_c varchar(64),
+Precio float(12),
+Recamaras int(3),
+Baños int(3),
+Plantas_c int(3),
+Metros int(12),
+Estacionamiento varchar(5),
+Ambientes_c varchar(64),
+Comodidades_c varchar(64),
+Reglas_c varchar(200),
+Numero_persona_c int(3),
+Genero_personas_c varchar(15),
+PRIMARY KEY (Id_casa,Nombre_c) 
+);
+
+
+DROP TABLE IF EXISTS casa_renta;
+CREATE TABLE casa_renta( 
+id_casa int(50),
+id_usuario varchar(64),
+fecha_inicio date,
+fecha_fin date
+);
+
+
+//nestor
+DROP database casa_renta; 
+CREATE database casa_renta; 
+use casa_renta;
+drop table if exists renta; 
+
+create table renta( 
+id_c int(50) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+ubicacion_c varchar(64) NOT NULL, 
+medio varchar(64) NOT NULL, 
+rutas varchar(64) NOT NULL, 
+recam varchar(128), 
+recama_i varchar(64), 
+recama_c varchar(64), 
+baño varchar(64), 
+baños_c varchar(64), 
+baños_m varchar(64), 
+serv varchar(128), 
+ext varchar(128), 
+reg varchar(128), 
+seg varchar(128), 
+cer varchar(128), 
+descripcion varchar(128), 
+precio_c varchar(128) );
+
+
+///Casas
+INSERT INTO renta(ubicacion_c,medio,rutas,recam,recama_i,recama_c,baño,baños_c,baños_m,serv,ext,reg,seg,cer,descripcion,precio_c) 
+VALUES ("amalucan en carretera federal a tehuacan km 9 numero 299 colonia casa blanca", 
+"1 hora de C.U", 
+"Ruta 72",
+"Individual", 
+"2",
+"0",
+"Planta",
+"1",
+"1",
+"Luz,Agua,Gas,Internet",
+"Muebles",
+"No fumar,No fiestas",
+"Rendatario viviendo en la casa rentada",
+"OXXO",
+"Incluye desayunos",
+"1900");
+INSERT INTO renta(ubicacion_c,medio,rutas,recam,recama_i,recama_c,baño,baños_c,baños_m,serv,ext,reg,seg,cer,descripcion,precio_c) 
+VALUES ("Universidad de Oaxaca 1606, col. universidades, puebla pue.
+", 
+"1 hora de C.U", 
+"Ruta 72",
+"Individual", 
+"2",
+"0",
+"Planta",
+"1",
+"1",
+"Luz,Agua,Gas,Internet",
+"Muebles",
+"No fumar,No fiestas",
+"Rendatario viviendo en la casa rentada",
+"OXXO",
+"Incluye desayunos",
+"1900");
+INSERT INTO renta(ubicacion_c,medio,rutas,recam,recama_i,recama_c,baño,baños_c,baños_m,serv,ext,reg,seg,cer,descripcion,precio_c) 
+VALUES ("amalucan en carretera federal a tehuacan km 9 numero 299 colonia casa blanca", 
+"1 hora de C.U", 
+"Ruta 72",
+"Individual", 
+"2",
+"0",
+"Planta",
+"1",
+"1",
+"Luz,Agua,Gas,Internet",
+"Muebles",
+"No fumar,No fiestas",
+"Rendatario viviendo en la casa rentada",
+"OXXO",
+"Incluye desayunos",
+"1900");
+
+INSERT INTO renta(ubicacion_c,medio,rutas,recam,recama_i,recama_c,baño,baños_c,baños_m,serv,ext,reg,seg,cer,descripcion,precio_c) 
+VALUES ("amalucan en carretera federal a tehuacan km 9 numero 299 colonia casa blanca", 
+"1 hora de C.U", 
+"Ruta 72",
+"Individual", 
+"2",
+"0",
+"Planta",
+"1",
+"1",
+"Luz,Agua,Gas,Internet",
+"Muebles",
+"No fumar,No fiestas",
+"Rendatario viviendo en la casa rentada",
+"OXXO",
+"Incluye desayunos",
+"1900");
+
+
+
+
+SELECT *FROM usuario;
+//Ejemplo para ingresar un usuario, el IFE puede ir vacio ya que puede ser usuario normal o duenio
+
+INSERT INTO usuario(Nombre,Apellidop,Apellidom,Edad,Contraseña,Foto,Direccion,Celular,Telefono,Correo,IFE) VALUES ("Antonio", "Chilaca", "Cuahuizo", 23, "chilaca3192", "img.jpg", "Hidalgo 910", "2221101210", "5719748", "chilaca@hotmail.com", "ife1.jpg");
+
+//Si es duenio se ingresara en la tabla casa el id de usuario y por tanto id de casa para posteriormente ubicarlas por id
+INSERT INTO casa VALUES(3,1); //Insertar en la tabla casa el id de quien renta, duenio, numero de casas.
+SELECT * FROM casa;
+SELECT Id_casa FROM  casa,usuario WHERE Nombre="Antonio";  //Para Buscar los Id's de las casa que renta_casa`

@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Formulario de inicio de sesión */
+.form-login {
+	max-width: 400px;
+	margin: auto;
+}
+
+.form-login-heading {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.form-login .pop {
+	color: red;
+}
+
+.form-login [type=text], .form-login [type=password] {
+	margin-top: 10px;
+}
+
+.form-login [type=button], .form-login [type=submit] {
+	margin-top: 10px;
+}

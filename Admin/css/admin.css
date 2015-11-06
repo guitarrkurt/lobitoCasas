@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Panel de administrador */
+#datos [type=button] {
+	margin-top: 10px;
+}
+
+#collapsed {
+	visibility: hidden;
+}
+
+#collapsed [type=text], #collapsed [type=password] {
+	width: 300px;
+	display: inline;
+}
+
+/* Consulta de hospedajes */
+#consultas th {
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#consultas td {
+	text-align:center;
+}
+
+#consultas td img {
+	width: 100px;
+	height: 100px;
+}
+
+#consultas td [type=button] {
+	margin-top: 5px;
+}
+
+#consultas .rojo {
+	font-weight: bold;
+	color: #FF0000;
+}
+
+#consultas .verde {
+	font-weight: bold;
+	color: #00DD00;
+}
+
+#hospedajes {
+	visibility: hidden;
+}
+
+#modificaciones {
+	visibility: hidden;
+	width: 700px;
+	margin: auto;
+}
+
+#modificaciones [type=text] {
+	display: inline;
+}
+
+#modificaciones textarea {
+	resize: none;
+	height: 100px;
+}
+
+.clientes {
+	cursor: pointer;
+}

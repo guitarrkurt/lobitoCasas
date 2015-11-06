@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Formulario de inicio de sesión */
+.form-signin {
+	max-width: 400px;
+	margin: auto;
+}
+
+.form-signin-heading {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.form-signin p {
+	color: red;
+}
+
+.form-signin #comp {
+	margin-top: 10px;
+	padding-right: 20px;
+	font-weight: normal;
+}
+
+.form-signin select {
+	display: inline;
+	margin-top: 10px;	
+	width: 290px;
+}
+
+.form-signin #numPer {
+	display: none;
+}
+
+.form-signin [type=text], .form-signin [type=password], .form-signin textarea {
+	margin-top: 10px;
+}
+
+.form-signin textarea {
+	resize: none;
+}
+
+.form-signin #desc {
+	height: 120px;
+}
+
+.form-signin #serv {
+	height: 80px;
+}
+
+.form-signin #img {
+	height: 100px;
+	background-color: #FFFFFF;
+}
+
+.form-signin [type=button], .form-signin [type=submit] {
+	margin-top: 10px;
+}
+
+.form-signin .readonly {
+	cursor: not-allowed;
+}
+
+/* Formulario de imágenes */
+.form-img {
+	max-width: 400px;
+	margin: auto;
+}
+
+.form-img-heading {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.form-img [type=text], .form-img [type=file]  {
+	margin-top: 10px;
+}
+
+.form-img [type=button], .form-img [type=submit] {
+	margin-top: 10px;
+}
